@@ -73,7 +73,6 @@ final class Cache_Enabler_Cleaner {
         $this->post_ids = array();
         $this->urls = array();
 
-        new Cache_Enabler_Autoloader(plugin_dir_path( dirname(__FILE__) ) . 'compatibility/');
         new Cache_Enabler_Woocommerce();
         new Cache_Enabler_Wpml();
     }
