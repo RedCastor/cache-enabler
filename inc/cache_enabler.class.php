@@ -654,12 +654,12 @@ final class Cache_Enabler {
                 'compress'          => 0,
                 'webp'              => 0,
                 'clear_on_upgrade'  => 0,
-                'clear_home_on_clear_by_post_id'  => $clear_home_on_clear_by_post_id,
-                'clear_ids_on_clear_by_post_id'  => $clear_ids_on_clear_by_post_id,
                 'excl_ids'          => '',
                 'excl_regexp'       => '',
                 'excl_cookies'      => '',
                 'minify_html'       => self::MINIFY_DISABLED,
+                'clear_home_on_clear_by_post_id'  => $clear_home_on_clear_by_post_id,
+                'clear_ids_on_clear_by_post_id'  => $clear_ids_on_clear_by_post_id,
             )
         );
     }
@@ -2009,13 +2009,13 @@ final class Cache_Enabler {
             'new_comment'       => (int)(!empty($data['new_comment'])),
             'webp'              => (int)(!empty($data['webp'])),
             'clear_on_upgrade'  => (int)(!empty($data['clear_on_upgrade'])),
-            'clear_home_on_clear_by_post_id' => $clear_home_post_types,
-            'clear_ids_on_clear_by_post_id' => $clear_ids_post_types,
             'compress'          => (int)(!empty($data['compress'])),
             'excl_ids'          => (string)sanitize_text_field(@$data['excl_ids']),
             'excl_regexp'       => (string)self::validate_regexps(@$data['excl_regexp']),
             'excl_cookies'      => (string)self::validate_regexps(@$data['excl_cookies']),
-            'minify_html'       => (int)$data['minify_html']
+            'minify_html'       => (int)$data['minify_html'],
+            'clear_home_on_clear_by_post_id' => $clear_home_post_types,
+            'clear_ids_on_clear_by_post_id' => $clear_ids_post_types,
         );
     }
 
