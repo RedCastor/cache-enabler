@@ -1254,10 +1254,11 @@ final class Cache_Enabler {
             return;
         }
 
-        self::$cleaner->clean_by_post_id($post_ID);
-
-        //clear additional ids for the post type
+        //Additional ids for the post type
         self::cache_clear_post_type_ids_by_post_id($post_ID);
+
+        //Clean the post id and the cleaner queue
+        self::$cleaner->clean_by_post_id($post_ID);
 
         // clear cache by post id hook
         do_action('ce_action_cache_by_post_id_cleared', $post_ID);
